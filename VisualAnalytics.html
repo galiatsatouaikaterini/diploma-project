@@ -57,7 +57,10 @@
 <div style="margin-left:18%">
     <div id="table"></div>
     <div id="folium" style="width: 1000px; height: 800px"></div>
-
+    <div id="folium1" style="width: 1000px; height: 800px"></div>
+    <div id="folium2" style="width: 1000px; height: 800px"></div>
+    <div id="folium3" style="width: 1000px; height: 800px"></div>
+    <div id="folium4" style="width: 1000px; height: 800px"></div>
     <div id="s11"></div>
     <div id="s1"></div>
 
@@ -285,7 +288,7 @@ def generate_timestamp_map(event):
             if df.iloc[i]['t'].astype(str) in max_input:
                 inside_range=False
     
-    pyscript.write('folium', m)
+    pyscript.write('folium4', m)
    
 
 def generate_default_map(event):
@@ -354,7 +357,7 @@ def generate_default_map_with_timeslider(event):
                        transition_time=1000,
                        auto_play=True).add_to(m)
 
-    pyscript.write('folium', m)
+    pyscript.write('folium1', m)
 
 
 def generate_trajectories_map():
@@ -378,7 +381,7 @@ def generate_trajectories_map():
                             radius=2, weight=5,
                             color=traj_color, popup=df.iloc[i]['oid']).add_to(m)
     
-    pyscript.write('folium', m)
+    pyscript.write('folium2', m)
 
 
 def generate_speed_map():
@@ -413,7 +416,7 @@ def generate_speed_map():
     #add color scale to map
     color_scale.add_to(m)
 
-    pyscript.write('folium', m)
+    pyscript.write('folium3', m)
 
 
 def map_options(event):
